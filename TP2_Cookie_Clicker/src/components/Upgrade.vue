@@ -1,23 +1,19 @@
 <script setup>
-import { useStore } from 'vuex'
-import { computed } from 'vue'
 import Ingredients_upgrade from './Ingredients_upgrade.vue'
+import Ustensils_upgrade from './Ustensils_upgrade.vue'
 
-const store = useStore()
-const increment = computed(() => store.state.tacos.increment)
-const autoIncrement = computed(() => store.state.tacos.autoIncrement)
 </script>
 
 <template>
     <section id="upgrade_zone">
-        <Ingredients_upgrade />
+        <Ustensils_upgrade />
         <Ingredients_upgrade />
     </section>
 </template>
 
 <style scoped>
 #upgrade_zone {
-    background-color: grey;
+    background-color: #abaaaa;
     width: 100%;
     margin: 0;
     padding: 1rem;

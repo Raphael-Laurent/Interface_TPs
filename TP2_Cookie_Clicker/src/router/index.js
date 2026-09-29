@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from 'vue-router'
-import store from './store' // adapte le chemin selon où est ton store
+import store from '../store' // adapte le chemin selon où est ton store
 
-import HomeView from './components/HomeView.vue'
-import Log from './components/Log.vue'
+import HomeView from '../components/HomeView.vue'
+import Log from '../components/Log.vue'
 
 const routes = [
     {path: '/', component: Log},

@@ -1,4 +1,3 @@
-import { setCurrentContext } from "vue-router/experimental"
 
 export default {
     namespaced: true,
@@ -31,8 +30,8 @@ export default {
 
             commit('setCurrentUser', username)
         },
-        logout({ commit }) {
-            dispatchEvent('saveGame') // on sauvegarde le jeu au logout
+        logout({ commit, dispatch }) {
+            dispatch('saveGame') // on sauvegarde le jeu au logout
             commit('setCurrentUser', null)
         },
         saveGame({ state, rootState}) {

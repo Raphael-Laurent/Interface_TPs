@@ -2,6 +2,7 @@
 import TacosClicker from './TacosClicker.vue'
 import Infos from './Infos.vue'
 import Upgrade from './Upgrade.vue'
+import LogoutButton from './LogoutButton.vue'
 import { useStore } from 'vuex'
 import { computed, onMounted } from 'vue'
 
@@ -15,6 +16,7 @@ onMounted(() => {
 
 <template>
     <section>
+        <LogoutButton />
         <TacosClicker />
         <p>Tacos: {{ tacos }}</p>
         <Upgrade />

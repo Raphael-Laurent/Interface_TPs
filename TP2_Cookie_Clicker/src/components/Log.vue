@@ -8,16 +8,23 @@ const router = useRouter()
 
 const username = ref('')
 const password = ref('')
+const isAdmin = ref(false)
 const error = ref('')
 const mode = ref('login')
 
 async function submit() {
     error.value = ''
     try {
-        await store.dispatch(`user/${mode.value}`, {
+        const payload = {
             username: username.value,
             password: password.value
-        })
+        }
+
+        if (mode.value === 'register') {
+            payload.role = isAdmin.value ? 'admin' : 'player'
+        }
+
+        await store.dispatch(`user/${mode.value}`, payload)
         await store.dispatch('user/loadGame')
         router.push('/home')
     } catch (e) {
@@ -37,6 +44,10 @@ function toggleMode() {
         <form @submit.prevent="submit">
             <input v-model="username" placeholder="Nom d'utilisateur" required />
             <input v-model="password" type="password" placeholder="Mot de passe" required />
+            <label v-if="mode === 'register'"">
+                <input v-model="isAdmin" type="checkbox" />
+                Admin account
+            </label>
             <button type="submit">
                 {{ mode === 'login' ? 'Login' : "Register" }}
             </button>

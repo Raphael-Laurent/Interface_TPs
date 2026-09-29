@@ -3,10 +3,12 @@ import store from '../store' // adapte le chemin selon où est ton store
 
 import HomeView from '../components/HomeView.vue'
 import Log from '../components/Log.vue'
+import UserTable from '../components/UsersTable.vue'
 
 const routes = [
     {path: '/', component: Log},
-    {path: '/home', component: HomeView}
+    {path: '/home', component: HomeView},
+    {path: '/userTable', component: UserTable}
 ]
 
 export const router = createRouter({

@@ -21,6 +21,7 @@ const store = useStore()
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+    align-self: center;
 }
 
 </style>
